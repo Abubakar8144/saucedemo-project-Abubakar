@@ -1,0 +1,10 @@
+{
+    "valid_username":"standard_user",
+    "invalid_username":"invalid_user",
+    "valid_password":"secret_sauce",
+    "invalid_password":"invalid_pass",
+    "inventoryURL":"https://www.saucedemo.com/inventory.html",
+    "invalid_credentials_error_message":"Username and password do not match",
+    "empty_username_error_message":"Username is required",
+    "empty_password_error_message":"Password is required"
+}
