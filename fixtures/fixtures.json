@@ -3,6 +3,7 @@
     "invalid_username":"invalid_user",
     "valid_password":"secret_sauce",
     "invalid_password":"invalid_pass",
+    "defaultURL":"https://www.saucedemo.com/",
     "inventoryURL":"https://www.saucedemo.com/inventory.html",
     "invalid_credentials_error_message":"Username and password do not match",
     "empty_username_error_message":"Username is required",

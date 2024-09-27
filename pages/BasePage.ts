@@ -4,6 +4,9 @@ export class BasePage {
     readonly page: Page
 
 
+    static super() {
+        throw new Error("Method not implemented.");
+    }
     constructor(page: Page) {
         this.page = page
 
@@ -21,12 +24,7 @@ export class BasePage {
 
     async validateCurrentUrl(page: Page, url: string) {
         await page.waitForURL(url)
-        await expect.soft(page.url()).toContain(url)
-    }
-
-    async validateCurrentUrlWithLoadState(page: Page, url: string) {
-        await this.waitForLoadState(page)
-        await expect.soft(page.url()).toContain(url)
+        await expect(page).toHaveURL(url)
     }
 
     async visitDefaultUrl() {
