@@ -16,6 +16,9 @@ test.describe('Inventory Page Tests', () => {
         await pageManager.getInventoryPage().addToCart(1)
         const cartCount = await pageManager.getInventoryPage().getCartCount()
         expect(cartCount).toBe('2')
+
+        const price1 = await pageManager.getInventoryPage().getInventoryItemPrice(0)
+        const price2 = await pageManager.getInventoryPage().getInventoryItemPrice(1)
     });
 
     // test('Remove items from cart', async () => {
@@ -31,3 +34,5 @@ test.describe('Inventory Page Tests', () => {
 
 
 });
+
+

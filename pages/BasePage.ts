@@ -31,10 +31,6 @@ export class BasePage {
         await this.page.goto("/")
     }
 
-    async click(locator: string) {
-        await this.page.click(locator)
-    }
-
     async type(locator: string, text: string) {
         await this.page.fill(locator, text)
     }

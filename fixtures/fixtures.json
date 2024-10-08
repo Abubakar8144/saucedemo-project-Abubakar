@@ -5,7 +5,14 @@
     "invalid_password":"invalid_pass",
     "defaultURL":"https://www.saucedemo.com/",
     "inventoryURL":"https://www.saucedemo.com/inventory.html",
+    "cartPageURL":"https://www.saucedemo.com/cart.html",
+    "checkoutInfoPageURL":"https://www.saucedemo.com/checkout-step-one.html",
+    "checkoutOverviewPageURL":"https://www.saucedemo.com/checkout-step-two.html",
+    "checkoutCompletePageURL":"https://www.saucedemo.com/checkout-complete.html",
     "invalid_credentials_error_message":"Username and password do not match",
     "empty_username_error_message":"Username is required",
-    "empty_password_error_message":"Password is required"
+    "empty_password_error_message":"Password is required",
+    "first_name":"test",
+    "last_name":"Abc",
+    "PostalCode":"123"
 }
