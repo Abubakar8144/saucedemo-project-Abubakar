@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test'
-import { BasePage } from './basePage'
+import { BasePage } from './BasePage'
 
 
 export class CartPage extends BasePage {
@@ -19,7 +19,7 @@ export class CartPage extends BasePage {
 
     }
 
-    
+
     async getCartItemName(index: number) {
         return await this.cartItemName.nth(index).textContent()
     }

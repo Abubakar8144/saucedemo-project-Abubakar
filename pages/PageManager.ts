@@ -1,8 +1,8 @@
 import { Page } from '@playwright/test'
 import { LoginPage } from './LoginPage'
 import { InventoryPage } from './InventoryPage'
-import { CheckoutInfoPage } from './checkoutInfoPage'
-import { CartPage } from './cartPage'
+import { CheckoutInfoPage } from './CheckoutInfoPage'
+import { CartPage } from './CartPage'
 import { CheckoutOverviewPage } from './CheckoutOverviewPage'
 import { CheckoutSuccessPage } from './CheckoutSuccessPage'
 

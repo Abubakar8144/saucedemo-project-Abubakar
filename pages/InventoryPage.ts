@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test'
-import { BasePage } from './basePage'
+import { BasePage } from './BasePage'
 
 export class InventoryPage extends BasePage {
     readonly page: Page
@@ -59,7 +59,7 @@ export class InventoryPage extends BasePage {
         await this.logoutButton.click()
     }
 
-    
+
     async resetAppState() {
         await this.openMenu()
         await this.resetAppStateButton.click()
