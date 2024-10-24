@@ -12,12 +12,12 @@ test.describe('Order Placement Tests', () => {
         await pageManager.getLoginPage().login(fixturesData.valid_username, fixturesData.valid_password)
     });
 
-    test('Place Full Order', async ({page}) => {
+    test('Place a successfull Order', async ({ page }) => {
 
         //Adding items to cart
         await pageManager.getInventoryPage().addToCart(0)
         await pageManager.getInventoryPage().addToCart(1)
-        
+
 
         //Validating the number of items added in the cart
         const cartCount = await pageManager.getInventoryPage().getCartCount()
@@ -39,13 +39,13 @@ test.describe('Order Placement Tests', () => {
 
         //Navigating to and validating Cart Page
         await pageManager.getInventoryPage().cartBadge.click()
-        await pageManager.getCartPage().validateCurrentUrl(page,fixturesData.cartPageURL)
+        await pageManager.getCartPage().validateCurrentUrl(page, fixturesData.cartPageURL)
 
 
         //Fetching the item's names that are present on Cart page
         const cartItemName1 = await pageManager.getCartPage().getCartItemName(0)
         const cartItemName2 = await pageManager.getCartPage().getCartItemName(1)
-        
+
 
         //Validating the item's names that are present on Cart page with the names that were added in inventory page
         await expect(inventoryItemName1).toBe(cartItemName1)
@@ -62,24 +62,28 @@ test.describe('Order Placement Tests', () => {
         await pageManager.getCheckoutInfoPage().lastNameField.fill(fixturesData.last_name)
         await pageManager.getCheckoutInfoPage().postalCodeField.fill(fixturesData.PostalCode)
 
+
         //Navigating to and validating Checkout Overview Page
         await pageManager.getCheckoutInfoPage().continueButton.click()
         await pageManager.getCheckoutOverviewPage().validateCurrentUrl(page, fixturesData.checkoutOverviewPageURL)
 
+
         //Validating the total price of all the added items in the cart with the calculated total price
         const totalPrice = await pageManager.getCheckoutOverviewPage().getTotalPrice()
         await expect(totalInventoryItemsPrice).toBe(totalPrice)
-        
+
+
         //Finishing the order
         await pageManager.getCheckoutOverviewPage().finishButton.click()
-       
+
+        
         //Validating the checkout completion
         await pageManager.getCheckoutSuccessPage().validateCurrentUrl(page, fixturesData.checkoutCompletePageURL)
         await expect(pageManager.getCheckoutSuccessPage().completeHeader).toHaveText("Thank you for your order!")
         await expect(pageManager.getCheckoutSuccessPage().completeText).toHaveText("Your order has been dispatched, and will arrive just as fast as the pony can get there!")
-        
 
-        
+
+
     });
 
 

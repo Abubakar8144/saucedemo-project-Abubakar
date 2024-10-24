@@ -31,25 +31,29 @@ export class PageManager {
         return this.loginPage
     }
 
+
     getInventoryPage() {
         return this.inventoryPage
     }
+
 
     getCartPage() {
         return this.cartPage
     }
 
+
     getCheckoutInfoPage() {
         return this.checkoutInfoPage
     }
+
 
     getCheckoutOverviewPage() {
         return this.checkoutOverviewPage
     }
 
+
     getCheckoutSuccessPage() {
         return this.checkoutSuccessPage
     }
-
 
 }

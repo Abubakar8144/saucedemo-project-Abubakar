@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test'
 import { BasePage } from './basePage'
-import { LoadFnOutput } from 'module'
+
 
 export class LoginPage extends BasePage {
     readonly page: Page
@@ -24,6 +24,7 @@ export class LoginPage extends BasePage {
         await this.passwordField.fill(password)
         await this.loginButton.click()
     }
+
 
     async getErrorMessage() {
         return await this.errorMessage.textContent()

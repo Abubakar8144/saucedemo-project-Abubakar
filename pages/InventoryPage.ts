@@ -2,15 +2,15 @@ import { expect, Locator, Page } from '@playwright/test'
 import { BasePage } from './basePage'
 
 export class InventoryPage extends BasePage {
-    readonly page:Page
-    readonly addToCartButtons : Locator
-    readonly cartBadge : Locator
-    readonly burgerMenuButton : Locator
-    readonly logoutButton : Locator
+    readonly page: Page
+    readonly addToCartButtons: Locator
+    readonly cartBadge: Locator
+    readonly burgerMenuButton: Locator
+    readonly logoutButton: Locator
     readonly resetAppStateButton: Locator
-    readonly inventoryItemName : Locator
-    readonly inventoryItemPrice : Locator
-    readonly removeFromInventoryButtons : Locator
+    readonly inventoryItemName: Locator
+    readonly inventoryItemPrice: Locator
+    readonly removeFromInventoryButtons: Locator
 
     constructor(page: Page) {
         super(page)
@@ -25,18 +25,17 @@ export class InventoryPage extends BasePage {
         this.removeFromInventoryButtons = page.locator('.btn_secondary')
     }
 
-    // async getItemCount() {
-    //     return await this.inventoryItems.count()
-    // }
 
     async addToCart(index: number) {
         await this.addToCartButtons.nth(index).click()
         await expect(this.addToCartButtons.nth(index)).toHaveText('Remove')
     }
 
+
     async getInventoryItemName(index: number) {
         return await this.inventoryItemName.nth(index).textContent()
     }
+
 
     async getInventoryItemPrice(index: number) {
         const priceText = await this.inventoryItemPrice.nth(index).textContent()
@@ -44,20 +43,24 @@ export class InventoryPage extends BasePage {
         return price;
     }
 
+
     async getCartCount() {
         return await this.cartBadge.textContent()
     }
-    
-    async openMenu(){
+
+
+    async openMenu() {
         await this.burgerMenuButton.click()
     }
 
-    async logout(){
+
+    async logout() {
         await this.openMenu()
         await this.logoutButton.click()
     }
 
-    async resetAppState(){
+    
+    async resetAppState() {
         await this.openMenu()
         await this.resetAppStateButton.click()
     }

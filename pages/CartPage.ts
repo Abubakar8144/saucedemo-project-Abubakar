@@ -19,6 +19,7 @@ export class CartPage extends BasePage {
 
     }
 
+    
     async getCartItemName(index: number) {
         return await this.cartItemName.nth(index).textContent()
     }

@@ -20,8 +20,6 @@ export class CheckoutInfoPage extends BasePage {
         this.lastNameField = page.locator("#last-name")
         this.postalCodeField = page.locator("#postal-code")
         this.cancelButton = page.locator("#cancel")
-
     }
-
 
 }
